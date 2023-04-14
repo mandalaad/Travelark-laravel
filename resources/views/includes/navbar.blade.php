@@ -19,14 +19,14 @@ class="navbar navbar-expand-lg pt-3 px-5 navbar-destination-paket-marbot">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-content-center">
       <li class="nav-item px-3">
-        <a class="nav-link" aria-current="page" href="index.html"
+        <a class="nav-link" aria-current="page" href="discovery"
           >Discovery</a
         >
       </li>
       <li class="nav-item px-3 dropdown">
         <a
           class="nav-link"
-          href="#"
+          href="destination"
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -46,10 +46,10 @@ class="navbar navbar-expand-lg pt-3 px-5 navbar-destination-paket-marbot">
         </ul>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="package.html">Package</a>
+        <a class="nav-link" href="package">Package</a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="aboutus">About Us</a>
       </li>
     </ul>
     <form class="d-flex px-4" role="search">

@@ -44,7 +44,7 @@
                     <button>See all</button>
                 </div>
             </div>
-            <div class="row">
+            <div class="">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="img-box">
                         <img src="img/nusa.jpg" alt="" />

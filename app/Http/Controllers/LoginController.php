@@ -13,15 +13,23 @@ class LoginController extends Controller
         return view ('pages.login');
     }
     public function login(Request $request){
-        $data = $request->only(['email', 'password']);
-        $response = Http::post('http://172.168.102.134:7889/api/login', ['email' => $data['email'], 'password'=> $data['password']]);
+        $data = $request->only([
+            'username',
+            'password'
+        ]);
+        $response = Http::post('https://travelark.up.railway.app/api/auth/login', ['username' => $data['username'], 'password'=> $data['password']]);
+        // dd(json_decode($response->body()));
         $this->storeJWT($request, json_decode($response->body()));
-        return redirect()->route('login');
+        return redirect()->route('adminindex');
     }
     public function storeJWT(Request $request, $data){
         try{
             $token_enc = Crypt::encryptString($data->access_token);
-            $request->session()->put(['token' => $token_enc, 'email' => $data->data->email, 'level' => $data->data->level]);
+            $request->session()->put([
+                'token' => $token_enc,
+                'username' => $data->data->username,
+                'level' => $data->data->level
+            ]);
         }catch(Exception $e){
             return $e;
         }

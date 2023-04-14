@@ -14,9 +14,9 @@ class isAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    { if($request->session()->get('email') && $request->session()->get('level') == 'admin'){
+    { if($request->session()->get('username') && $request->session()->get('level') == 'admin'){
         return $next($request);
     }
-    return redirect()->route('login');
+    return redirect()->route('adminindex');
     }
 }
